@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.17/css/jquery.dataTables.min.css"/> 
+
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/> 
+    
+    <script src={{ url_for('static', filename='js/jquer.js') }}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="ui container">
+      <div class="ui one column grid">
+          
+              <div class="column">
+                  <h3 class="ui block header">
+                  PLAYER A
+                  </h3>
+              </div>
+         
+      </div>
+      <div class="ui four column grid">
+        <div class="row">
+
+          <!-- PLayer one first dropdown-->
+            <div class="column">
+              <div class="ui floating dropdown labeled icon button" id="floating1" required>
+                  <i class="filter icon"></i>
+                  <span class="text">Filter Posts</span>
+                  <div class="menu">
+                    <div class="ui icon search input">
+                      <i class="search icon"></i>
+                      <input type="text" placeholder="Search tags...">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="header">
+                      <i class="tags icon"></i>
+                          Select Card
+                    </div>
+                    <div id="dropdownMenu1" >
+                      <div class="scrolling menu" id="dropdown1">
+                      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            
+            <!--- Player one second-->
+            <div class="column">
+                  
+              <div class="ui floating dropdown labeled icon button" id="floating3">
+                  <i class="filter icon"></i>
+                  <span class="text">Filter Posts</span>
+                  <div class="menu">
+                    <div class="ui icon search input">
+                      <i class="search icon"></i>
+                      <input type="text" placeholder="Search tags...">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="header">
+                      <i class="tags icon"></i>
+                          Select Card
+                    </div>
+                    
+                    <div id="dropdownMenu3" >
+                      <div class="scrolling menu" id="dropdown3">
+                      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+
+            <!-- PLayer one third drop down -->
+
+            <div class="column">
+              <div class="ui floating dropdown labeled icon button" id="floating5">
+                  <i class="filter icon"></i>
+                  <span class="text">Filter Posts</span>
+                  <div class="menu">
+                    <div class="ui icon search input">
+                      <i class="search icon"></i>
+                      <input type="text" placeholder="Search tags...">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="header">
+                      <i class="tags icon"></i>
+                          Select Card
+                    </div>
+
+                    <div id="dropdownMenu5" >
+                      <div class="scrolling menu" id="dropdown5">
+                      
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+            
+            <!-- FIrst radio button-->
+            
+            <div class="column">
+              <div class="ui radio checkbox">
+                  <input type="radio" name="radio" value="player1" >
+                  <label>Winner A</label>
+                </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="ui one column grid">
+        
+        <div class="column">
+            <h3 class="ui block header">
+            PLAYER B
+            </h3>
+        </div>
+   
+      </div>
+      <div class="ui four column grid">
+          <div class="row">
+            
+              <div class="column">
+                  <div class="ui floating dropdown labeled icon button" id="floating2">
+                      <i class="filter icon"></i>
+                      <span class="text">Filter Posts</span>
+                      <div class="menu">
+                        <div class="ui icon search input">
+                          <i class="search icon"></i>
+                          <input type="text" placeholder="Search tags...">
+                        </div>
+                        <div class="divider"></div>
+                        <div class="header">
+                          <i class="tags icon"></i>
+                              Select Card
+                        </div>
+
+                        <div id="dropdownMenu2" >
+                          <div class="scrolling menu" id="dropdown2">
+                          
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="column">
+                <div class="ui floating dropdown labeled icon button" id="floating4">
+                    <i class="filter icon"></i>
+                    <span class="text">Filter Posts</span>
+                    <div class="menu">
+                      <div class="ui icon search input">
+                        <i class="search icon"></i>
+                        <input type="text" placeholder="Search tags...">
+                      </div>
+                      <div class="divider"></div>
+                      <div class="header">
+                        <i class="tags icon"></i>
+                            Select Card
+                      </div>
+
+                      <div id="dropdownMenu4" >
+                        <div class="scrolling menu" id="dropdown4">
+                        
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+              <div class="ui floating dropdown labeled icon button" id="floating6">
+                  <i class="filter icon"></i>
+                  <span class="text">Filter Posts</span>
+                  <div class="menu" id="dropdownMenu1">
+                    <div class="ui icon search input">
+                      <i class="search icon"></i>
+                      <input type="text" placeholder="Search tags...">
+                    </div>
+                    <div class="divider"></div>
+                    <div class="header">
+                      <i class="tags icon"></i>
+                          Select Card
+                    </div>
+
+                    <div id="dropdownMenu6" >
+                      <div class="scrolling menu" id="dropdown6">
+                      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="column">
+            <div class="ui radio checkbox">
+                <input type="radio" name="radio" value="player2">
+                <label>Winner B</label>
+              </div>
+          </div>
+
+
+          </div>
+
+      </div>
+
+      <div class="row">
+        <div class="column "></div>
+      </div>
+
+        <!-- Final submit column-->
+        <div class="ui column grid">
+            <div class="row">
+                <div class="column">
+                    <button type="submit" onclick="afterSubmit()" id="submit" class="positive ui button">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ui container">
+      <div class="row clearfix"> 
+
+        <div class="col-md-1"></div> 
+
+  
+
+        <div class="col-md-10"> 
+
+            <table id="logs_table" class="table table-responsive table-bordered table-hover table-striped"> 
+
+                <thead> 
+
+                    <th class="header" style="width:200px">Id</th> 
+
+                    <th class="header" style="width:200px">Card 1</th> 
+
+                    <th class="header" style="width:200px">Card 2</th> 
+
+                    <th class="header" style="width:200px">Card 3</th> 
+
+                    <th class="header" style="width:200px">Card 4</th> 
+
+                    <th class="header" style="width:200px">Card 5</th> 
+
+                    <th class="header" style="width:200px">Card 6</th> 
+
+                    <th class="header" style="width:300px">Winner</th>
+
+                    <th class="header" style="width:300px">Date Time</th>
+
+
+
+                </thead> 
+
+            </table> 
+
+        </div> 
+
+  
+
+        <div clas="col-md-1"></div> 
+
+    </div> 
+
+ 
+    </div>
+
+    <script src={{ url_for('static', filename='js/script.js') }}></script>
+    <script>
+    $(document).ready(function() {
+            var table = $('#logs_table').DataTable({
+                "dom": 'Bfrtip',
+                "order": [],
+                buttons: [{
+
+                    extend: 'excelHtml5',
+
+                    title: 'RouterLogs'
+
+                }, 'pageLength'],
+
+                "paging": true,
+
+                "pageLength": 10,
+
+                "ajax": {
+
+                    "url": "/ajax_logs",
+
+                    "dataType": "json",
+
+                    "dataSrc": "data",
+
+                    "contentType": "application/json"
+
+                },
+
+                "columns": [
+
+                    {
+                        "data": "id"
+                    },
+
+                    {
+                        "data": "card1", render: getImg
+                        
+                    },
+
+                    {
+                        "data": "card2", render: getImg
+                    },
+
+                    {
+                        "data": "card3", render: getImg
+                    },
+
+                    {
+                        "data": "card4", render: getImg
+                    },
+
+                    {
+                        "data": "card5", render: getImg
+                    },
+
+                    {
+                        "data": "card6", render: getImg
+                    },
+
+                    {
+                        "data": "winner"
+                    },
+
+                    {
+                        "data": "datetime"
+                    }
+
+                ]
+
+
+
+            });
+          });
+  
+        
+    function getImg(data, type, full, meta) {
+      return '<img src="https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/' + data + '.png" height="50" width="50"/>';
+    }
+    </script>
+  </body>
+</html>

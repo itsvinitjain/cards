@@ -1,0 +1,872 @@
+[2022-05-19 20:28:13,459] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 26, in home
+    return render_template('home.html')
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\templates\home.html", line 9, in top-level template code
+    <script src={{ url_for('static/js', filename='script.js') }}></script>
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\py3\Python\Python37\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static/js' with values ['filename']. Did you mean 'static' instead?
+[2022-05-19 20:28:15,977] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 26, in home
+    return render_template('home.html')
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\templates\home.html", line 9, in top-level template code
+    <script src={{ url_for('static/js', filename='script.js') }}></script>
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\py3\Python\Python37\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static/js' with values ['filename']. Did you mean 'static' instead?
+[2022-05-19 20:28:51,900] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 26, in home
+    return render_template('home.html')
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\templates\home.html", line 9, in top-level template code
+    <script src={{ url_for('static', filename='js/script.js') }}></script>
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\py3\Python\Python37\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static/js' with values ['filename']. Did you mean 'static' instead?
+[2022-05-19 20:28:53,383] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 26, in home
+    return render_template('home.html')
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\templates\home.html", line 9, in top-level template code
+    <script src={{ url_for('static', filename='js/script.js') }}></script>
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\py3\Python\Python37\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static/js' with values ['filename']. Did you mean 'static' instead?
+[2022-05-19 20:28:54,015] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 26, in home
+    return render_template('home.html')
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 150, in render_template
+    ctx.app,
+  File "C:\py3\Python\Python37\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\py3\Python\Python37\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\templates\home.html", line 9, in top-level template code
+    <script src={{ url_for('static', filename='js/script.js') }}></script>
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 338, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\helpers.py", line 326, in url_for
+    endpoint, values, method=method, force_external=external
+  File "C:\py3\Python\Python37\lib\site-packages\werkzeug\routing.py", line 2305, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static/js' with values ['filename']. Did you mean 'static' instead?
+[2022-05-20 10:27:26,379] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    print({"success":"value updated"})
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    print({"success":"value updated"})
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-20 10:36:20,065] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    print({"success":"value updated"})
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    print({"success":"value updated"})
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-20 10:44:15,046] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\network.py", line 574, in open_connection
+    self.sock.connect(sockaddr)
+  File "C:\py3\Python\Python37\lib\site-packages\gevent\_socketcommon.py", line 607, in connect
+    raise _SocketError(err, strerror(err))
+ConnectionRefusedError: [Errno 10061] [WinError 10061] No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 7, in insert_data
+    con = mysql.connector.connect(**db_creds)
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\__init__.py", line 273, in connect
+    return MySQLConnection(*args, **kwargs)
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\connection.py", line 114, in __init__
+    self.connect(**kwargs)
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\abstracts.py", line 1009, in connect
+    self._open_connection()
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\connection.py", line 418, in _open_connection
+    self._socket.open_connection()
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\network.py", line 580, in open_connection
+    _strioerror(err),
+mysql.connector.errors.InterfaceError: 2003: Can't connect to MySQL server on 'localhost:3306' (10061 [WinError 10061] No connection could be made because the target machine actively refused it.)
+[2022-05-20 11:40:31,099] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 10, in insert_data
+    connection = mysql.connector.connect(**db_creds)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 10, in insert_data
+    connection = mysql.connector.connect(**db_creds)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-20 11:42:20,576] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 9, in insert_data
+    try:
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\cursor.py", line 568, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\connection.py", line 846, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\py3\Python\Python37\lib\site-packages\mysql\connector\connection.py", line 656, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'playerOneFirstcard' in 'field list'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 31, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 9, in insert_data
+    try:
+NameError: name 'Error' is not defined
+[2022-05-20 12:38:23,420] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 32, in update
+    if res.data:
+AttributeError: 'dict' object has no attribute 'data'
+[2022-05-20 12:44:40,258] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 33, in update
+    if res.data:
+AttributeError: 'dict' object has no attribute 'data'
+[2022-05-20 12:48:17,274] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 33, in update
+    return json.dumps({"success":res["data"]})
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 33, in update
+    return json.dumps({"success":res["data"]})
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-20 15:13:45,753] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 15:16:26,150] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 15:17:56,887] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 15:18:55,442] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 15:19:52,516] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 60, in logs
+    cur.close()
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 60, in logs
+    cur.close()
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 68, in logs
+    print ("error: %s: %s" % (e.args[0],e.args[1]))
+IndexError: tuple index out of range
+[2022-05-20 15:20:09,851] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 60, in logs
+    cur.close()
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 60, in logs
+    cur.close()
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 68, in logs
+    print ("error: %s: %s" % (e.args[0],e.args[1]))
+IndexError: tuple index out of range
+[2022-05-20 15:20:24,976] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 63, in logs
+    return json.dumps({'data':results})
+NameError: name 'json' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 67, in logs
+    print ("error: %s: %s" % (e.args[0],e.args[1]))
+IndexError: tuple index out of range
+[2022-05-20 15:25:55,652] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 18:16:49,197] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-20 18:16:55,449] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 11:57:10,367] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 11:58:34,842] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 11:59:28,200] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 32, in update
+    return json.dumps({"success":res["data"]})
+  File "C:\py3\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2022-05-21 11:59:29,857] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 32, in update
+    return json.dumps({"success":res["data"]})
+  File "C:\py3\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+[2022-05-21 12:02:49,501] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 12:04:24,169] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 12:04:41,893] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 12:05:38,627] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-21 16:38:51,690] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-24 08:52:25,934] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 65, in insert_data
+    if connection.is_connected():
+UnboundLocalError: local variable 'connection' referenced before assignment
+[2022-05-24 08:53:39,949] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 64, in insert_data
+    if connection.is_connected():
+AttributeError: 'sqlite3.Connection' object has no attribute 'is_connected'
+[2022-05-24 08:54:43,344] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 64, in insert_data
+    if connection.is_connected():
+AttributeError: 'sqlite3.Connection' object has no attribute 'is_connected'
+[2022-05-24 08:57:19,317] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 65, in insert_data
+    if connection.is_connected():
+AttributeError: 'sqlite3.Connection' object has no attribute 'is_connected'
+[2022-05-24 08:57:59,970] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-24 08:58:14,456] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 65, in insert_data
+    if connection.is_connected():
+UnboundLocalError: local variable 'connection' referenced before assignment
+[2022-05-24 09:06:54,359] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 72, in insert_data
+    if res:
+UnboundLocalError: local variable 'res' referenced before assignment
+[2022-05-24 09:11:47,596] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 73, in insert_data
+    if res:
+UnboundLocalError: local variable 'res' referenced before assignment
+[2022-05-24 09:12:37,026] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 56, in insert_data
+    columns = ', '.join(data.keys())
+UnboundLocalError: local variable 'res' referenced before assignment
+[2022-05-24 09:16:22,937] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 73, in insert_data
+    if res:
+UnboundLocalError: local variable 'res' referenced before assignment
+[2022-05-24 09:20:09,683] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 37, in update
+    return json.dumps({"success":res["data"]}, default=json_serial)
+  File "C:\py3\Python\Python37\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 24, in json_serial
+    raise TypeError ("Type %s not serializable" % type(obj))
+TypeError: Type <class 'sqlite3.Row'> not serializable
+[2022-05-24 09:27:52,194] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 74, in insert_data
+    return {"data":res}
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 74, in insert_data
+    return {"data":res}
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-24 09:33:37,872] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 36, in update
+    if res.get("data"):
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 36, in update
+    if res.get("data"):
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-24 09:40:56,348] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\py3\Python\Python37\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\py3\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 24, in json_serial
+    raise TypeError ("Type %s not serializable" % type(obj))
+TypeError: Type <class 'sqlite3.Row'> not serializable
+[2022-05-24 10:15:05,460] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 73, in insert_data
+    if res:
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\util.py", line 73, in insert_data
+    if res:
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-05-24 10:17:08,615] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-24 10:18:06,624] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-24 10:45:43,323] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-05-24 10:47:03,209] ERROR : log_exception : Exception on /ajax_logs [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1535, in finalize_request
+    response = self.make_response(rv)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
+    f"The view function for {request.endpoint!r} did not"
+TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+
+    <!-- Semantic css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- End of semantic css-->
+
+    <!-- Datatable css-->
+        <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.17/css/jquery.dataTables.min.css"/>  -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables_themeroller.css" rel="stylesheet" data-semver="1.9.4" data-require="datatables@*" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.css" rel="stylesheet" data-semver="1.9.4" data-require="datatables@*" />
+        <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/demo_table_jui.css" rel="stylesheet" data-semver="1.9.4" data-require="datatables@*" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/demo_table_jui.css" rel="stylesheet" data-semver="1.9.4" data-require="datatables@*" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/demo_table.css" rel="stylesheet" data-semver="1.9.4" data-require="datatables@*" /> -->
+
+        <link rel="'stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css" />
+        <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+    <!-- End of Datatable css-->
+
+        <link data-require="jqueryui@*" data-semver="1.10.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css" />
+    
+   
+    
+    <!-- <script src={{ url_for('static', filename='js/jquer.js') }}></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+    <script src="https:////cdn.datatables.net/plug-ins/1.12.1/dataRender/datetime.js"></script> -->
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
+
+<script data-require="jqueryui@*" data-semver="1.10.0" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.js" data-semver="1.9.4" data-require="datatables@*"></script>
+
+    <title>Document</title>
+    <style>
+         tfoot {
+    display: table-header-group;
+}
+    </style>
+</head>
+<body>
+
+    <div class="ui center fluid container" style="margin-top: 50px;  overflow: hidden;"  >
+
+        <div class="ui one column grid">
+          
+            <div class="column center aligned">
+                <h3 class="ui block header">
+                    All records 
+                </h3>
+            </div>
+       
+        </div>
+        <div class="ui one column grid">
+            <div class="column center aligned">
+                
+                <p id="date_filter">
+                    <span id="date-label-from" class="date-label">From: </span><div class="ui input focus"> <input class="date_range_filter date" type="text" id="datepicker_from" /></div>
+                    <span id="date-label-to" class="date-label">To:</span> <div class="ui input focus"><input class="date_range_filter date" type="text" id="datepicker_to" /></div>
+                </p>
+
+                <!-- <h3>Range</h3>
+                <div class="ui form">
+                  <div class="two fields">
+                    <div class="field">
+                      <label>Start date</label>
+                      <div class="ui calendar" id="rangestart">
+                        <div class="ui input left icon">
+                          <i class="calendar icon"></i>
+                          <input type="text" placeholder="Start">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>End date</label>
+                      <div class="ui calendar" id="rangeend">
+                        <div class="ui input left icon">
+                          <i class="calendar icon"></i>
+                          <input type="text" placeholder="End">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                  <!--- Date range -->
+                    <!-- <table  cellspacing="5" cellpadding="5">
+                        <tbody><tr>
+                            <td>Minimum date:</td>
+                            <td><input type="text" id="min" name="min"></td>
+                        </tr>
+                        <tr>
+                            <td>Maximum date:</td>
+                            <td><input type="text" id="max" name="max"></td>
+                        </tr>
+                         </tbody>
+                     </table> -->
+                <!-- End of date range-->
+            </div>
+        </div>
+        <div class="ui column equal width grid">
+
+            <div class="ui  fluid container" style="margin-top: 30px;  overflow-x: scroll;margin-left: 2% !important ;margin-right: 2% !important; ">
+
+              
+
+                <table name="item" id="item" class="ui celled striped table nowrap"  cellspacing="0">
+                                
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Card 1</th>
+                                            <th>Card 2</th>
+                                            <th>Card 3</th>
+                                            <th>Card 4</th>
+                                            <th>Card 5</th>
+                                            <th>Card 6</th>
+                                            <th>Winner</th> 
+                                            <th>datetime</th> 
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                        <th>ID</th>
+                                        <th>Card 1</th>
+                                        <th>Card 2</th>
+                                        <th>Card 3</th>
+                                        <th>Card 4</th>
+                                        <th>Card 5</th>
+                                        <th>Card 6</th>
+                                        <th>Winner</th> 
+                                        <th>datetime</th> 
+                                        </tr>
+                                    </tfoot>
+                                    
+                                    <tbody id="tbody">
+                                        
+                                    </tbody>
+                                        
+                </table>
+            </div>
+     
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+let playingCard =['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
+let mainCard= ['heart','diamond','spade','club']
+let mainCardValue={
+    'heart':'DD',
+    'spade':'HH',
+    'club':'CC',
+    'diamond':'SS'
+}
+
+function setTableValue(){
+
+}
+
+$(document).ready(function () {
+
+    let tbody= document.querySelector('tbody')
+    var data = {"success":[
+    [
+        3,
+        "3DD",
+        "QCC",
+        "KSS",
+        "AHH",
+        "QCC",
+        "QSS",
+        "player1",
+        "2022-05-24 09:19:48"
+    ],
+    [
+        4,
+        "4DD",
+        "ADD",
+        "3DD",
+        "5DD",
+        "4DD",
+        "2DD",
+        "player1",
+        "2022-05-22 09:19:48"
+    ],
+    [
+        9,
+        "2DD",
+        "7SS",
+        "QCC",
+        "5DD",
+        "4CC",
+        "QCC",
+        "player1",
+        "2022-05-25 09:19:48"
+    ],
+    [
+        10,
+        "2DD",
+        "7SS",
+        "QCC",
+        "5DD",
+        "4CC",
+        "QCC",
+        "player1",
+        "2022-05-23 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-25 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-22 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-26 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-27 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-23 09:19:48"
+    ],
+    [
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-26 09:19:48"
+    ],[
+        11,
+        "6SS",
+        "3SS",
+        "8HH",
+        "3SS",
+        "8SS",
+        "JCC",
+        "player1",
+        "2022-05-25 09:19:48"
+    ]
+]};
+
+let html=''
+data.success.forEach(element => {
+
+    var tr = tbody.insertRow();
+        for(let cellValue in element)
+        {
+            var td1 = tr.insertCell();
+            // Append a text node to the cell
+            
+            if(cellValue === '0' || cellValue === '7' || cellValue === '8')
+            {
+                let newText = document.createTextNode(element[cellValue]);
+                td1.appendChild(newText);
+            }
+           
+
+            if(cellValue !== '0' && cellValue !== '7' && cellValue !== '8')
+            {
+                let tableValue = element[cellValue]
+                // //let tableValueArray= tableValue.toString().split('')
+                let finalTableCell;
+                let mainCardValue;
+
+                // finalTableCell = tableValue.replace('DD','');
+                // finalTableCell = tableValue.replace('HH','');
+                // finalTableCell = tableValue.replace('CC','');
+                // finalTableCell = tableValue.replace('SS','');
+
+                
+
+                //let heartFlag = tableValue.includes('DD')
+                
+                if(tableValue.includes('DD')) finalTableCell = tableValue.replace('DD','');
+
+                if(tableValue.includes('HH')) finalTableCell = tableValue.replace('HH','');
+
+                if(tableValue.includes('SS')) finalTableCell = tableValue.replace('SS','');
+
+                if(tableValue.includes('CC')) finalTableCell = tableValue.replace('CC','');
+               
+                var span = document.createElement('span');
+                span.style.visibility='hidden';
+
+                let newText = document.createTextNode(finalTableCell);
+                
+                span.appendChild(newText);
+                
+                td1.appendChild(span);
+                
+                let link = getImg(tableValue)
+                
+                var image = new Image(); 
+                //image.src = `../static/images/${mainCardValue}.png`;
+                image.src = link
+                image.width='50';
+                image.height='50';
+                td1.appendChild(image);
+            }       
+
+        }
+
+    
+});
+
+
+
+    let url = ''
+    // fetch(url)
+    // .then(res => res.json())
+    // .then(data => {
+
+    //     data.success.forEach(element => {
+    //         console.log(element)
+    //     });
+
+    // })
+
+     // Setup - add a text input to each footer cell
+     $('#item tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+// DataTable
+ var otable = $('#item').DataTable({
+    dom: 'Bfrtip',
+    buttons: [
+        'copy', 'excel', 'pdf', 'csv'
+    ],
+    "oLanguage": {
+      "sSearch": "Filter Data"
+    }
+});
+
+ // Apply the search
+ otable.columns().every( function () {
+ 
+     var that = this;
+     
+     $( 'input', this.footer() ).on( 'keyup change', function () {
+         if ( that.search() !== this.value ) {
+            console.log('that value',that.search())
+            console.log('this value',this.value)
+             that
+                 .search( this.value )
+                 .draw();
+         }
+     } );
+ });
+
+
+  // create data input
+  $("#datepicker_from").datepicker({
+    showOn: "button",
+    //buttonImage: "../static/images/calendar.png",
+    buttonText: "<i class='fa fa-calendar'></i>",
+    buttonImageOnly: false,
+    "onSelect": function(date) {
+      minDateFilter = new Date(date).getTime();
+      otable.draw();
+    }
+  }).keyup(function() {
+    minDateFilter = new Date(this.value).getTime();
+    otable.draw();
+  });
+
+  $("#datepicker_to").datepicker({
+    showOn: "button",
+    buttonText: "<i class='fa fa-calendar'></i>",
+    buttonImageOnly: false,
+    "onSelect": function(date) {
+      maxDateFilter = new Date(date).getTime();
+      otable.draw();
+    }
+  }).keyup(function() {
+    maxDateFilter = new Date(this.value).getTime();
+    otable.draw();
+  });
+
+  // Date range filter
+minDateFilter = "";
+maxDateFilter = "";
+
+$.fn.dataTableExt.afnFiltering.push(
+  function(oSettings, aData, iDataIndex) {
+      console.log('_date',aData._date)
+      console.log(aData)
+    if (typeof aData._date == 'undefined') {
+      aData._date = new Date(aData[8]).getTime();
+    }
+
+    if (minDateFilter && !isNaN(minDateFilter)) {
+      if (aData._date < minDateFilter) {
+        return false;
+      }
+    }
+
+    if (maxDateFilter && !isNaN(maxDateFilter)) {
+      if (aData._date > maxDateFilter) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+);
+    //   $('#rangestart').calendar({
+    //     type: 'date',
+    //     endCalendar: $('#rangeend')
+    // });
+    // $('#rangeend').calendar({
+    // type: 'date',
+    // startCalendar: $('#rangestart')
+    // });
+
+    // otable.every( function () {
+    //     console.log('hello')
+    // })
+
+
+//   minDate = new DateTime($('#min'), {
+//         format: 'MMMM Do YYYY'
+//     });
+//     maxDate = new DateTime($('#max'), {
+//         format: 'MMMM Do YYYY'
+//     });
+ 
+ 
+//     // Refilter the table
+    // $('#rangestart, #rangeend').on('change', function () {
+    //     otable.draw();
+    // });
+
+ //var minDate, maxDate;
+ 
+    //Custom filtering function which will search data in column four between two values
+    // $.fn.dataTable.ext.search.push(
+    //     function( settings, data, dataIndex ) {
+    //             var min = minDate.val();
+    //             var max = maxDate.val();
+    //             var date = new Date( data[4] );
+        
+    //         if (
+    //                 ( min === null && max === null ) ||
+    //                 ( min === null && date <= max ) ||
+    //                 ( min <= date   && max === null ) ||
+    //                 ( min <= date   && date <= max )
+    //             ) 
+    //         {
+    //                 return true;
+    //         }
+    //         return false;
+    //     }
+    // ); 
+
+})
+
+function getImg(data) {
+        return `https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/${data}.png`
+      
+        //return '<img src="https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/' + data + '.png" height="50" width="50"/>';
+    }
+
+</script>
+
+<script>
+//     $(document).ready(function() {
+//     // Create date inputs
+   
+// });
+    
+   
+
+    
+</script>
+</html>

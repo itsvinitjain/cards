@@ -1,0 +1,8 @@
+1)Icons for each code in table - done
+2)horizontal align dropdown 
+3)timestamp 
+4) player A B instead of player 1,2
+
+
+1)filter on each column
+2) download pdf option

@@ -1,0 +1,13 @@
+.page {
+    margin: auto;
+    padding: auto;
+    margin-top: 15px;
+  }
+  
+  .col-sm {
+    max-width: 250px;
+  }
+  .dropdown {
+    padding: 5px 5px;
+  }
+  
