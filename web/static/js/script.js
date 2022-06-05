@@ -137,10 +137,27 @@ function afterSubmit()
     console.log(data)
     fetch(url,options)
     .then(res => res.json())
-    .then(data => console.log(data))
-    .then(() =>window.location.reload())
+    .then(data =>  data.success ? data : false).then(res => {
+        if (res) {
+            window.location.reload();
+        } else {
+            duplicatealert()
+        }    
+    });
+    
 
 
 }
 
+function duplicatealert(){
+    $.uiAlert({
+    textHead: "Duplicate Entry Exists", // header
+    text: 'Duplicate Entry', // Text
+    bgcolor: '#DB2828', // background-color
+    textcolor: '#fff', // color
+    position: 'top-right',// position . top And bottom ||  left / center / right
+    icon: 'remove circle', // icon in semantic-UI
+    time: 2, // time
+      })
+};
 

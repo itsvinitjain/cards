@@ -30,12 +30,25 @@ def json_serial(obj):
 def home():
     return render_template('home.html') 
 
+@app.route('/interview', methods=["POST"]) 
+def printname():
+    try:
+        res=request.json
+        exp,lan=res["experience"],res["Language"]
+        
+        output=f"I have {exp} of experience in {lan}"
+        print(output)
+        return json.dumps({"output":output}),201
+    except:
+        return json.dumps({"error":"somethiong went wrong"})
+
 @app.route('/update', methods=["POST"]) 
 def update():
     res = util.insert_data(request.json)
+    print(res)
     if res.get("data"):
         return json.dumps({"success":res["data"]}, default=json_serial)
-    return json.dumps({"error":res.error})
+    return json.dumps({"error":res["error"]})
 
 @app.route('/test', methods=["GET", "POST"]) 
 def test():

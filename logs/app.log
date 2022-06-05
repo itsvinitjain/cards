@@ -870,3 +870,57 @@ Traceback (most recent call last):
   File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1699, in make_response
     f"The view function for {request.endpoint!r} did not"
 TypeError: The view function for 'logs' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-06-03 07:44:20,255] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 35, in update
+    res = util.insert_data(request.json)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\util.py", line 72, in insert_data
+    if res:
+UnboundLocalError: local variable 'res' referenced before assignment
+[2022-06-03 07:50:28,413] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 38, in update
+    return json.dumps({"error":res.error})
+AttributeError: 'dict' object has no attribute 'error'
+[2022-06-03 07:52:53,092] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 39, in update
+    return json.dumps({"error":res.error})
+AttributeError: 'dict' object has no attribute 'error'
+[2022-06-03 07:52:55,277] ERROR : log_exception : Exception on /update [POST]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 39, in update
+    return json.dumps({"error":res.error})
+AttributeError: 'dict' object has no attribute 'error'

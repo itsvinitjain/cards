@@ -7,5 +7,6 @@ CREATE TABLE `card` (
   `card5` varchar(100) NOT NULL,
   `card6` varchar(100) NOT NULL,
   `winner` varchar(100) NOT NULL,
-  `datetime` datetime NOT NULL
+  `datetime` datetime NOT NULL,
+  UNIQUE (card1, card2, card3, card4, card5, card6, winner)
 );

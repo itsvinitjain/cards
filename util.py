@@ -61,6 +61,7 @@ def insert_data(data):
         connection.commit()
     except Exception as e:
         print("Error while connecting to MySQL", e)
+        res=None
     finally:
         if c.env == "local":
             cursor.close()
@@ -73,7 +74,7 @@ def insert_data(data):
         if c.env == "local":
             res = [tuple(i) for i in res]
         return {"data":res}
-    return {"error":f"Error while connecting to MySQL {e}"}
+    return {"error":f"Duplicate entry exists"}
     
 def rows_to_dict_list(cursor): 
      columns = [i[0] for i in cursor.description] 
