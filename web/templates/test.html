@@ -179,149 +179,37 @@ function setTableValue(){
 
 }
 
-$(document).ready(function () {
+$(document).ready(function () 
+{
 
     let tbody= document.querySelector('tbody')
-    var data = {"success":[
-    [
-        3,
-        "3DD",
-        "QCC",
-        "KSS",
-        "AHH",
-        "QCC",
-        "QSS",
-        "player1",
-        "2022-05-24 09:19:48"
-    ],
-    [
-        4,
-        "4DD",
-        "ADD",
-        "3DD",
-        "5DD",
-        "4DD",
-        "2DD",
-        "player1",
-        "2022-05-22 09:19:48"
-    ],
-    [
-        9,
-        "2DD",
-        "7SS",
-        "QCC",
-        "5DD",
-        "4CC",
-        "QCC",
-        "player1",
-        "2022-05-25 09:19:48"
-    ],
-    [
-        10,
-        "2DD",
-        "7SS",
-        "QCC",
-        "5DD",
-        "4CC",
-        "QCC",
-        "player1",
-        "2022-05-23 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-25 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-22 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-26 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-27 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-23 09:19:48"
-    ],
-    [
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-26 09:19:48"
-    ],[
-        11,
-        "6SS",
-        "3SS",
-        "8HH",
-        "3SS",
-        "8SS",
-        "JCC",
-        "player1",
-        "2022-05-25 09:19:48"
-    ]
-]};
+      
+    let url = '/ajax_logs'
+    fetch(url)
+    .then(res => res.json())
+    .then(data1 => 
+    {
 
-let html=''
-data.success.forEach(element => {
-
-    var tr = tbody.insertRow();
+      let {data} = data1
+      console.log(data)
+      data.forEach(element => 
+      {
+         var tr = tbody.insertRow();
+        
         for(let cellValue in element)
         {
+           
             var td1 = tr.insertCell();
             // Append a text node to the cell
             
-            if(cellValue === '0' || cellValue === '7' || cellValue === '8')
+            if(cellValue === 'id' || cellValue === 'winner' || cellValue === 'datetime')
             {
                 let newText = document.createTextNode(element[cellValue]);
                 td1.appendChild(newText);
             }
            
 
-            if(cellValue !== '0' && cellValue !== '7' && cellValue !== '8')
+            if(cellValue !== 'id' && cellValue !== 'winner' && cellValue !== 'datetime')
             {
                 let tableValue = element[cellValue]
                 // //let tableValueArray= tableValue.toString().split('')
@@ -366,111 +254,253 @@ data.success.forEach(element => {
 
         }
 
+      });
+
+
+      // Setup - add a text input to each footer cell
+      $('#item tfoot th').each( function () {
+          var title = $(this).text();
+          $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+      } );
+
+      // DataTable
+      var otable = $('#item').DataTable({
+          dom: 'Bfrtip',
+          buttons: [
+              'copy', 'excel', 'pdf', 'csv'
+          ],
+          "oLanguage": {
+            "sSearch": "Filter Data"
+          }
+      });
+
+      // Apply the search
+      otable.columns().every( function () {
+      
+      var that = this;
+      
+      $( 'input', this.footer() ).on( 'keyup change', function () {
+          if ( that.search() !== this.value ) {
+              console.log('that value',that.search())
+              console.log('this value',this.value)
+              that
+                  .search( this.value )
+                  .draw();
+          }
+      } );
+      });
+
+        // create data input
+        $("#datepicker_from").datepicker({
+          showOn: "button",
+          //buttonImage: "../static/images/calendar.png",
+          buttonText: "<i class='fa fa-calendar'></i>",
+          buttonImageOnly: false,
+          "onSelect": function(date) {
+            minDateFilter = new Date(date).getTime();
+            otable.draw();
+          }
+        }).keyup(function() {
+          minDateFilter = new Date(this.value).getTime();
+          otable.draw();
+        });
+
+        $("#datepicker_to").datepicker({
+          showOn: "button",
+          buttonText: "<i class='fa fa-calendar'></i>",
+          buttonImageOnly: false,
+          "onSelect": function(date) {
+            maxDateFilter = new Date(date).getTime();
+            otable.draw();
+          }
+        }).keyup(function() {
+          maxDateFilter = new Date(this.value).getTime();
+          otable.draw();
+        });
+
+
+          // Date range filter
+          minDateFilter = "";
+          maxDateFilter = "";
+
+          $.fn.dataTableExt.afnFiltering.push(
+            function(oSettings, aData, iDataIndex) {
+                console.log('_date',aData._date)
+                console.log(aData)
+              if (typeof aData._date == 'undefined') {
+                aData._date = new Date(aData[8]).getTime();
+              }
+
+              if (minDateFilter && !isNaN(minDateFilter)) {
+                if (aData._date < minDateFilter) {
+                  return false;
+                }
+              }
+
+              if (maxDateFilter && !isNaN(maxDateFilter)) {
+                if (aData._date > maxDateFilter) {
+                  return false;
+                }
+              }
+
+              return true;
+            }
+          );
+          
+          function getImg(data) {
+              return `https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/${data}.png`
+            
+              //return '<img src="https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/' + data + '.png" height="50" width="50"/>';
+          }
+
+
+  })// end of then
+
+})
+
+
+</script>
+
+<script>
+//     $(document).ready(function() {
+//     // Create date inputs
+   
+// });
     
-});
+   
+
+    
+</script>
+</html>
 
 
 
-    let url = ''
-    // fetch(url)
-    // .then(res => res.json())
-    // .then(data => {
 
-    //     data.success.forEach(element => {
-    //         console.log(element)
-    //     });
+<script>
+//     var data = {"success":[
+//     [
+//         3,
+//         "3DD",
+//         "QCC",
+//         "KSS",
+//         "AHH",
+//         "QCC",
+//         "QSS",
+//         "player1",
+//         "2022-05-24 09:19:48"
+//     ],
+//     [
+//         4,
+//         "4DD",
+//         "ADD",
+//         "3DD",
+//         "5DD",
+//         "4DD",
+//         "2DD",
+//         "player1",
+//         "2022-05-22 09:19:48"
+//     ],
+//     [
+//         9,
+//         "2DD",
+//         "7SS",
+//         "QCC",
+//         "5DD",
+//         "4CC",
+//         "QCC",
+//         "player1",
+//         "2022-05-25 09:19:48"
+//     ],
+//     [
+//         10,
+//         "2DD",
+//         "7SS",
+//         "QCC",
+//         "5DD",
+//         "4CC",
+//         "QCC",
+//         "player1",
+//         "2022-05-23 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-25 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-22 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-26 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-27 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-23 09:19:48"
+//     ],
+//     [
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-26 09:19:48"
+//     ],[
+//         11,
+//         "6SS",
+//         "3SS",
+//         "8HH",
+//         "3SS",
+//         "8SS",
+//         "JCC",
+//         "player1",
+//         "2022-05-25 09:19:48"
+//     ]
+// ]};
 
-    // })
 
-     // Setup - add a text input to each footer cell
-     $('#item tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
-
-// DataTable
- var otable = $('#item').DataTable({
-    dom: 'Bfrtip',
-    buttons: [
-        'copy', 'excel', 'pdf', 'csv'
-    ],
-    "oLanguage": {
-      "sSearch": "Filter Data"
-    }
-});
-
- // Apply the search
- otable.columns().every( function () {
- 
-     var that = this;
-     
-     $( 'input', this.footer() ).on( 'keyup change', function () {
-         if ( that.search() !== this.value ) {
-            console.log('that value',that.search())
-            console.log('this value',this.value)
-             that
-                 .search( this.value )
-                 .draw();
-         }
-     } );
- });
-
-
-  // create data input
-  $("#datepicker_from").datepicker({
-    showOn: "button",
-    //buttonImage: "../static/images/calendar.png",
-    buttonText: "<i class='fa fa-calendar'></i>",
-    buttonImageOnly: false,
-    "onSelect": function(date) {
-      minDateFilter = new Date(date).getTime();
-      otable.draw();
-    }
-  }).keyup(function() {
-    minDateFilter = new Date(this.value).getTime();
-    otable.draw();
-  });
-
-  $("#datepicker_to").datepicker({
-    showOn: "button",
-    buttonText: "<i class='fa fa-calendar'></i>",
-    buttonImageOnly: false,
-    "onSelect": function(date) {
-      maxDateFilter = new Date(date).getTime();
-      otable.draw();
-    }
-  }).keyup(function() {
-    maxDateFilter = new Date(this.value).getTime();
-    otable.draw();
-  });
-
-  // Date range filter
-minDateFilter = "";
-maxDateFilter = "";
-
-$.fn.dataTableExt.afnFiltering.push(
-  function(oSettings, aData, iDataIndex) {
-      console.log('_date',aData._date)
-      console.log(aData)
-    if (typeof aData._date == 'undefined') {
-      aData._date = new Date(aData[8]).getTime();
-    }
-
-    if (minDateFilter && !isNaN(minDateFilter)) {
-      if (aData._date < minDateFilter) {
-        return false;
-      }
-    }
-
-    if (maxDateFilter && !isNaN(maxDateFilter)) {
-      if (aData._date > maxDateFilter) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-);
     //   $('#rangestart').calendar({
     //     type: 'date',
     //     endCalendar: $('#rangeend')
@@ -520,24 +550,4 @@ $.fn.dataTableExt.afnFiltering.push(
     //     }
     // ); 
 
-})
-
-function getImg(data) {
-        return `https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/${data}.png`
-      
-        //return '<img src="https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/' + data + '.png" height="50" width="50"/>';
-    }
-
 </script>
-
-<script>
-//     $(document).ready(function() {
-//     // Create date inputs
-   
-// });
-    
-   
-
-    
-</script>
-</html>
