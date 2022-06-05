@@ -2,7 +2,7 @@ import os
 import sys
 env = 'local' 
 lab = True 
-
+passw={"admin":"admin"}
 WEB_APP_PORT = 8080  
 BASEPATH = os.getcwd()
 LOGPATH = BASEPATH + "/logs" 

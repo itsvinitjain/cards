@@ -3,9 +3,21 @@ import logging
 import util 
 import config as C 
 import util
-import json
-app = Flask(__name__) 
+import json 
 from datetime import date, datetime
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+app = Flask(__name__)
+auth = HTTPBasicAuth()
+
+users = {
+    "admin": generate_password_hash(C.passw.get("admin"))
+}
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
   
 
 formatter = logging.Formatter(C.LOGFORMATTER) 
@@ -27,6 +39,7 @@ def json_serial(obj):
 #app_bp = Blueprint('app', __name__, static_folder='static') 
 
 @app.route('/') 
+@auth.login_required
 def home():
     return render_template('home.html') 
 

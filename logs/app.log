@@ -924,3 +924,54 @@ Traceback (most recent call last):
   File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 39, in update
     return json.dumps({"error":res.error})
 AttributeError: 'dict' object has no attribute 'error'
+[2022-06-05 11:00:07,842] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 25, in wrapped_view
+    if not auth and auth.username=="admin" and auth.password=="123":
+AttributeError: 'NoneType' object has no attribute 'username'
+[2022-06-05 11:23:58,045] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 26, in wrapped_view
+    if auth and auth.username=="admin" and auth.password=="123":
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 26, in wrapped_view
+    if auth and auth.username=="admin" and auth.password=="123":
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+[2022-06-05 11:57:43,503] ERROR : log_exception : Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\py3\Python\Python37\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 26, in wrapped_view
+    if auth and auth.username=="admin" and auth.password=="123":
+  File "C:\Users\vinit santosh jain\Desktop\prasanna\cards\cards\web\ui.py", line 26, in wrapped_view
+    if auth and auth.username=="admin" and auth.password=="123":
+  File "C:\py3\Python\Python37\lib\bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\py3\Python\Python37\lib\bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
