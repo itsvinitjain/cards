@@ -42,10 +42,8 @@ def insert_data(data):
     print(data)
     try:
         if c.env == "local":
-            print("sdfg")
             connection = get_db_connection()
         else:
-            print("sdfsdfdf")
             connection = mysql.connector.connect(**db_creds)
             if connection.is_connected():
                 db_Info = connection.get_server_info()  
@@ -81,9 +79,24 @@ def rows_to_dict_list(cursor):
      if c.env == "local":
         cursor = [tuple(i) for i in cursor]
      r = [dict(zip(columns, row)) for row in cursor] 
-
-
      return r 
+
+def deletedata(id):
+    db_creds = c.DATABASES
+    if c.env == "local":
+        connection = get_db_connection()
+    else:
+        connection = mysql.connector.connect(**db_creds)
+    cursor = connection.cursor()
+    sql = "delete from card where id='%s'" % (id)
+    print(sql)
+    cursor.execute(sql)
+    connection.commit()
+    cursor.close()
+    connection.close()
+    return True
+
+
 
 
 

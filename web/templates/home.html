@@ -262,6 +262,8 @@
 
                     <th class="header" style="width:300px">Date Time</th>
 
+                    <th class="header" style="width:300px">Delete</th>
+
 
 
                 </thead> 
@@ -347,7 +349,19 @@
 
                     {
                         "data": "datetime"
+                    },
+                    {"data": "id", "defaultContent": '',
+
+                 "render": function(data, type, row, meta){
+
+                    if (data != null && data != ''){
+
+                        return "<form action='/delete' method='post' enctype='multipart/form-data'> <input name='id' type='hidden' value=" + data + "><button  type='submit' class='btn btn-success btn-md'>Delete</button></form>";
+
                     }
+
+                }}
+
 
                 ]
 

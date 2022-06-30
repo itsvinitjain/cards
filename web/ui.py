@@ -43,18 +43,6 @@ def json_serial(obj):
 def home():
     return render_template('home.html') 
 
-@app.route('/interview', methods=["POST"]) 
-def printname():
-    try:
-        res=request.json
-        exp,lan=res["experience"],res["Language"]
-        
-        output=f"I have {exp} of experience in {lan}"
-        print(output)
-        return json.dumps({"output":output}),201
-    except:
-        return json.dumps({"error":"somethiong went wrong"})
-
 @app.route('/update', methods=["POST"]) 
 def update():
     res = util.insert_data(request.json)
@@ -73,7 +61,7 @@ def logs():
     con1 = util.dbconnect() 
     if con1:                                                                                 
         cur = con1.cursor()
-        query = "select * from card" 
+        query = "select * from card ORDER BY id desc limit 5" 
         try:
             cur.execute(query)          
             results  = util.rows_to_dict_list(cur) 
@@ -86,6 +74,12 @@ def logs():
     else:
         print ("error: get_request_row() no active db connection" )
 
+@app.route('/delete', methods=["GET", "POST"]) 
+def delete():
+    res = util.deletedata(request.form.get('id'))
+    if res:
+        return redirect(url_for('home'))
+    return {"error":"error deleting entry"}
 #app.register_blueprint(app_bp, url_prefix="/") 
 if __name__ == '__main__':
       
