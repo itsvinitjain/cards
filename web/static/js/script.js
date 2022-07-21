@@ -7,6 +7,13 @@ let mainCardValue={
     'diamond':'SS'
 }
 
+let mainCardValueimg={
+    'DD':'heart',
+    'HH':'spade',
+    'CC':'club',
+    'SS':'diamond'
+}
+
 let playerOneFirstValue,playerOneSecondValue,playerOneThirdValue,
 playerTwoFirstValue,playerTwoSecondValue,playerTwoThirdValue =''
 
@@ -161,3 +168,116 @@ function duplicatealert(){
       })
 };
 
+
+function uploadmodal(){ 
+    $('.ui.modal').modal('show');
+}
+
+
+function uploadexcel() {
+    var form_data = new FormData($('#upload-file')[0]);
+    $("#upload-file-btn").addClass("loading");
+    $.ajax({
+        type: 'POST',
+        url: '/uploadajax',
+        data: form_data,
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function(data) {
+            if ( data["data"] == null){
+                swal("File Uploaded Successfully", "", "success")
+            }
+            else if (data["success"]){
+                const wrapper = document.createElement('div');
+                //wrapper.innerHTML = createTable([["row 1, cell 1", "row 1, cell 2"], ["row 2, cell 1", "row 2, cell 2"]]);
+                var tableData = data["data"]
+
+                var table = document.createElement('table');
+                table.setAttribute("id", "datatable");
+                table.innerHTML=`<thead><th>card1</th><th>card2</th><th>card3</th><th>card4</th><th>card5</th><th>card6</th><th>winner</th></thead>`
+                var tableBody = document.createElement('tbody');
+              
+                tableData.forEach(function(rowData) {
+                  var row = document.createElement('tr');
+              
+                  rowData.forEach(function(cellData) {
+                    var cell = document.createElement('td');
+                    console.log(cellData);
+                    if (cellData.startsWith("Player") || cellData.startsWith("player")){
+                    var winner = document.createTextNode(cellData);     
+                    cell.appendChild(winner);
+                    }
+                    else{
+                    var img = document.createElement('img');
+                    img.style.width = "20px";
+                    img.style.height = "20px";
+                    //var textofcard = document.createTextNode(cellData[0]);
+                    img.src = 'https://d1arlbwbznybm5.cloudfront.net/v1/static/front/images/cards/'+cellData+'.png';
+                    //cell.appendChild(textofcard);
+                    img.setAttribute("title", cellData.slice(0,-2)+" "+mainCardValueimg[cellData.slice(-2)]);
+                    cell.appendChild(img);
+                    }
+                    row.appendChild(cell);
+                  });
+              
+                  tableBody.appendChild(row);
+                });
+              
+                table.appendChild(tableBody);
+                swal({
+                title: 'File Uploaded Successfully...',
+                text: 'Below Duplicate Entries Found...',
+                content: table
+                });
+                $('#datatable').DataTable( {
+                    dom: 'Bfrtip',
+                    buttons : [
+                        { 
+                        extend : 'pdfHtml5',
+                        exportOptions : {
+                            stripHtml: false,
+                            format: {
+                                body: function(data, col, row) {
+                                    var isImg = ~data.toLowerCase().indexOf('img') ? $(data).is('img') : false;
+                                    if (isImg) {
+                                        return $(data).attr('title');
+                                    }
+                                    return data;
+                                }
+                            }
+                        }
+                }]
+                });
+                
+            }
+            else{
+                sweetAlert("Oops...", data["error"], "error");
+            }
+            $("#upload-file-btn").removeClass("loading");
+        }
+        
+    });
+}
+
+function createTable(tableData) {
+    var table = document.createElement('table');
+    var tableBody = document.createElement('tbody');
+  
+    tableData.forEach(function(rowData) {
+      var row = document.createElement('tr');
+  
+      rowData.forEach(function(cellData) {
+        var cell = document.createElement('td');
+        cell.appendChild(document.createTextNode("Hi"));
+        row.appendChild(cell);
+      });
+  
+      tableBody.appendChild(row);
+    });
+  
+    table.appendChild(tableBody);
+    document.body.appendChild(table);
+  }
+  
+  

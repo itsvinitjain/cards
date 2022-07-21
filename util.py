@@ -1,9 +1,13 @@
 from ctypes import util
+from multiprocessing.reduction import duplicate
 import config as c 
 import mysql.connector
 import time
 import datetime
 import sqlite3
+import pandas as pd
+from urllib.parse import quote  
+from sqlalchemy.engine import create_engine
 
 
 def get_db_connection():
@@ -95,6 +99,20 @@ def deletedata(id):
     cursor.close()
     connection.close()
     return True
+
+def bulkupload(df):
+    engine = create_engine('mysql+mysqlconnector://'+c.DATABASES[c.env]["user"]+':%s@'+c.DATABASES[c.env]["host"]+':3306/'+c.DATABASES[c.env]["database"]+'' % quote(c.DATABASES[c.env]["password"]))
+    conn = engine.connect()  
+    duplicate=[] 
+    columns = ["card1","card2","card3","card4","card5","card6","winner"] 
+    for i in range(len(df)):
+        try:
+            df.iloc[i:i+1].to_sql('card', con=conn, index = False, if_exists='append')
+        except Exception as ee:
+            duplicate.append(str(ee).split("'")[1].split("-"))
+            r = [dict(zip(columns, row)) for row in duplicate]     
+    conn.close()
+    return duplicate if duplicate else None
 
 
 

@@ -1,9 +1,14 @@
+from multiprocessing.reduction import duplicate
+from MySQLdb import IntegrityError
 from flask import Blueprint, Flask, redirect, url_for, abort, render_template, request, jsonify, Response 
 import logging
+
+from sqlalchemy import column
 import util 
 import config as C 
 import util
 import json 
+import pandas as pd
 from datetime import date, datetime
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -61,7 +66,7 @@ def logs():
     con1 = util.dbconnect() 
     if con1:                                                                                 
         cur = con1.cursor()
-        query = "select * from card ORDER BY id desc limit 5" 
+        query = "select * from card ORDER BY id desc limit 300" 
         try:
             cur.execute(query)          
             results  = util.rows_to_dict_list(cur) 
@@ -80,6 +85,20 @@ def delete():
     if res:
         return redirect(url_for('home'))
     return {"error":"error deleting entry"}
+
+@app.route('/uploadajax', methods = ['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save("bulkentries.xlsx")     
+        try:
+            df = pd.read_excel("bulkentries.xlsx")
+            res = util.bulkupload(df)
+            print(res)
+        except Exception as e:
+            return {"error":"Please Upload excel with proper format"}          
+        return {"success":"File Uploaded Successfully.","data":res}
+
 #app.register_blueprint(app_bp, url_prefix="/") 
 if __name__ == '__main__':
       
